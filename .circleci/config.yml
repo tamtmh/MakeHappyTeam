@@ -18,7 +18,7 @@ jobs:
         MYSQL_PASSWORD: tamtest
     steps:
     - checkout
-
+    - run: ls
     - run:
         name: Waiting for MySQL to be ready
         command: |
@@ -30,14 +30,14 @@ jobs:
           done
           echo Failed waiting for MySQL && exit 1
     - run:
-        name: Install MySQL CLI
+        name: Import Data
         command: |
-          mysql -h 127.0.0.1 -u tam -ptamtest test < app/DDL/DDL_Insert_Make_Happy.sql
+          mysql -h 127.0.0.1 -u tam -ptamtest test < ~/app/DDL/DDL_Insert_Make_Happy.sql
     - run:
         name: Chmod app/tmp
         command: sudo chmod -R 0777 app/tmp
     - run:
-        name: Install MySQL CLI
+        name: Import Data
         command: |
           cd app
           ./Console/cake test app AllTests
