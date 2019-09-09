@@ -32,7 +32,7 @@ jobs:
     - run:
         name: Import Data
         command: |
-          mysql -h 127.0.0.1 -u tam -ptamtest test < ~/app/DDL/DDL_Insert_Make_Happy.sql
+          mysql -h 127.0.0.1 -u tam -ptamtest test < ./app/DDL/DDL_Insert_Make_Happy.sql
     - run:
         name: Chmod app/tmp
         command: sudo chmod -R 0777 app/tmp
