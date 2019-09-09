@@ -48,7 +48,11 @@ jobs:
         name: Create non-admin user
         command: |
           sudo mysql -u root -e "CREATE user myuser IDENTIFIED BY 'password';"
+#    - run:
+#        name: Create database Make Happy
+#        command: |
+#          sudo mysql -u root -e "CREATE database make_happy"
     - run:
-        name: Run tests
+        name: Import Data
         command: |
-          php sql-data/connect.php
+          mysql -h 127.0.0.1 -u root  -p < ./DDL/DDL_Insert_Make_Happy.sql

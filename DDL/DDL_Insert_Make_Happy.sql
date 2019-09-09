@@ -3,6 +3,8 @@
 -- Host: 127.0.0.1    Database: make_happy
 -- ------------------------------------------------------
 -- Server version	8.0.16
+DROP DATABASE make_happy;
+CREATE DATABASE make_happy;
 use make_happy;
 
 --
