@@ -4,8 +4,9 @@ jobs:
     docker:
     - image: circleci/php:7.1-apache-node-browsers # The primary container where steps are run
     - image: circleci/mysql:8.0.4
+      command: [--default-authentication-plugin=mysql_native_password]
       environment:
-        MYSQL_ROOT_PASSWORD: rootpw
+        MYSQL_ALLOW_EMPTY_PASSWORD: true
         MYSQL_DATABASE: test_db
         MYSQL_USER: user
         MYSQL_PASSWORD: passw0rd
@@ -27,7 +28,6 @@ jobs:
         name: Install MySQL CLI; Import dummy data; run an example query
         command: |
           sudo apt-get install default-mysql-client
-          mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --default-authentication-plugin=mysql_native_password
           mysql -h 127.0.0.1 -u user -ppassw0rd test_db < sql-data/dummy.sql
           mysql -h 127.0.0.1 -u user -ppassw0rd --execute="SELECT * FROM test_db.Persons"
 workflows:
