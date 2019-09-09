@@ -27,8 +27,9 @@ jobs:
         name: Install MySQL CLI; Import dummy data; run an example query
         command: |
           sudo apt-get install default-mysql-client
-          mysql -h 127.0.0.1 -u root -e "ALTER USER 'user'@'127.0.0.1' IDENTIFIED WITH mysql_native_password BY 'passw0rd';"
+          mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --default-authentication-plugin=mysql_native_password
           mysql -h 127.0.0.1 -u user -ppassw0rd test_db < sql-data/dummy.sql
+          mysql -h 127.0.0.1 -u user -ppassw0rd --execute="SELECT * FROM test_db.Persons"
 workflows:
   version: 2
   build-deploy:
