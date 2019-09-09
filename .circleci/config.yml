@@ -1,60 +1,36 @@
-# PHP CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-php/ for more details
-#
 version: 2
 jobs:
   build:
     docker:
-    # specify the version you desire here
-    - image: circleci/php:7.2-apache-stretch-node-browsers
+    - image: circleci/php:7.1-apache-node-browsers # The primary container where steps are run
+    - image: circleci/mysql:8.0.4
       environment:
-        MYSQL_ROOT_PASSWORD: password
-        MYSQL_HOST: 127.0.0.1
-
-    # Specify service dependencies here if necessary
-    # CircleCI maintains a library of pre-built images
-    # documented at https://circleci.com/docs/2.0/circleci-images/
-    # - image: circleci/mysql:9.4
+        MYSQL_ROOT_PASSWORD: rootpw
+        MYSQL_DATABASE: test_db
+        MYSQL_USER: user
+        MYSQL_PASSWORD: passw0rd
 
     steps:
     - checkout
     - run:
-        name: Install things we need
+        # Our primary container isn't MYSQL so run a sleep command until it's ready.
+        name: Waiting for MySQL to be ready
         command: |
-          sudo apt-get update
-          sudo apt-get install -y libzip-dev
-          sudo apt-get install -y zlib1g-dev libicu-dev g++
-          sudo apt-get install mysql-client
-          sudo apt-get -y install mysql-server
+          for i in `seq 1 10`;
+          do
+            nc -z 127.0.0.1 3306 && echo Success && exit 0
+            echo -n .
+            sleep 1
+          done
+          echo Failed waiting for MySQL && exit 1
     - run:
-        name: Install PHP exts
+        name: Install MySQL CLI; Import dummy data; run an example query
         command: |
-          sudo docker-php-ext-install zip
-          sudo docker-php-ext-configure intl
-          sudo docker-php-ext-install intl
-          sudo docker-php-ext-install pdo_mysql
-    - run:
-        name: Fix MySQL socket config
-        command: |
-          sudo sh -c "echo 'pdo_mysql.default_socket=/var/run/mysqld/mysqld.sock' > /usr/local/etc/php/conf.d/pdo.ini"
-    - run:
-        name: Start database server
-        command: |
-          sudo service mysql start
-          sleep 2
-          ps aux | grep mysql
-    - run:
-        name: Create non-admin user
-        command: |
-          sudo mysql -u root -e "CREATE user myuser IDENTIFIED BY 'password';"
-          sudo mysql -u myuser -ppassword -e "CREATE database make_happy;"
-
-#    - run:
-#        name: Create database Make Happy
-#        command: |
-#          sudo mysql -u root -e "CREATE database make_happy"
-    - run:
-        name: Import Data
-        command: |
-          mysql -h 127.0.0.1 -u myuser -ppassword make_happy < ./DDL/DDL_Insert_Make_Happy.sql
+          sudo apt-get install default-mysql-client
+          mysql -h 127.0.0.1 -u user -ppassw0rd test_db < sql-data/dummy.sql
+          mysql -h 127.0.0.1 -u user -ppassw0rd --execute="SELECT * FROM test_db.Persons"
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+    - build
