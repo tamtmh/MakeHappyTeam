@@ -18,7 +18,6 @@ jobs:
         MYSQL_PASSWORD: tamtest
     steps:
     - checkout
-    - run: ls
     - run:
         name: Waiting for MySQL to be ready
         command: |
@@ -29,6 +28,9 @@ jobs:
             sleep 1
           done
           echo Failed waiting for MySQL && exit 1
+    - run:
+        name: Initializing Mysql
+        command: 'sudo service mysql status || sudo service mysql restart; '
     - run:
         name: Import Data
         command: |
