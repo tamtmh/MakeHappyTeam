@@ -55,4 +55,4 @@ jobs:
     - run:
         name: Import Data
         command: |
-          mysql -h 127.0.0.1 -u root  -p < ./DDL/DDL_Insert_Make_Happy.sql
+          mysql -h 127.0.0.1 -u root < ./DDL/DDL_Insert_Make_Happy.sql
