@@ -12,10 +12,10 @@ jobs:
 
     - image: circleci/mysql:5.7
       environment:
-        MYSQL_ROOT_PASSWORD: rootpw
-        MYSQL_DATABASE: test_db
-        MYSQL_USER: user
-        MYSQL_PASSWORD: passw0rd
+        MYSQL_ROOT_PASSWORD: root
+        MYSQL_DATABASE: test
+        MYSQL_USER: tam
+        MYSQL_PASSWORD: tamtest
     steps:
     - checkout
 
@@ -32,7 +32,6 @@ jobs:
     - run:
         name: Install MySQL CLI
         command: |
-          sudo apt-get install mysql-client
           mysql -h 127.0.0.1 -u tam -ptamtest test < app/DDL/DDL_Insert_Make_Happy.sql
     - run:
         name: Chmod app/tmp
