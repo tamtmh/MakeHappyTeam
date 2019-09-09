@@ -30,7 +30,7 @@ jobs:
           echo Failed waiting for MySQL && exit 1
     - run:
         name: Initializing Mysql
-        command: 'sudo service mysql status || sudo service mysql restart; '
+        command: 'sudo service mysqld status || sudo service mysqld restart; '
     - run:
         name: Import Data
         command: |
