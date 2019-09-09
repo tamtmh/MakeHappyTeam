@@ -1,0 +1,33 @@
+version: "3.3"
+services:
+  mht-db:
+    image: mysql:8.0
+    container_name: mht-db
+    hostname: mht-db
+    restart: always
+    command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci', '--default-authentication-plugin=mysql_native_password']
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=true
+    ports:
+      - "3306:3306"
+    network_mode: bridge
+
+  mht-web:
+    image: 801007122070.dkr.ecr.ap-northeast-1.amazonaws.com/make-happy-team
+    container_name: mht-web
+    restart: always
+    hostname: vagrant
+    ports:
+      - "443:443"
+      - "80:80"
+    links:
+      - mht-db
+    environment:
+      - IS_DOCKER=1
+      - MYSQL_HOST_SYS=mht-db
+      - MYSQL_HOST_COMMUNITY=mht-db
+    volumes:
+      - ./../:/var/www/html/:rw
+    command: ['/startup.sh']
+    network_mode: bridge
+    privileged: true

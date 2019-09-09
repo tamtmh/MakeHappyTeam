@@ -1,0 +1,176 @@
+.tittle img {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+.group .btn-group .textTeam {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.time {
+    font-size: 16px;
+    margin-top: 24px;
+    padding: 5px 15px;
+    float: right;
+    margin-right: 1px;
+}
+.time i {
+    margin-right: 10px;
+}
+hr {
+    font-size: 2px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+.emoji, .status, .score {
+    text-align: center;
+    border: 1px #e7e7e7 solid;
+    border-radius: 4px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 50px;
+}
+.emoji img {
+    width: 60%;
+}
+.score p {
+    color: red;
+    font-weight: bold;
+    font-size: 46px;
+    padding-top: 15px;
+}
+.emoji {
+    margin-right: 20px;
+    margin-left: 25px;
+}
+.score {
+    margin-right: 20px;
+}
+.status {
+    text-align: -moz-center;
+}
+@media (max-device-width: 420px) {
+    .emoji {
+        margin-right: 10px;
+        margin-left: 25px;
+    }
+    .form-question {
+        padding-left: 10%;
+    }
+    .form-question textarea {
+        max-width: 65%;
+    }
+    .button {
+        text-align: left;
+    }
+    .status {
+        margin-left: 15px;
+    }
+    #btnCmt {
+        display: none;
+    }
+}
+.title-report p, .report {
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 0px;
+}
+.answer {
+    border: 1px #e7e7e7 solid;
+    padding: 15px 10px 15px 25px;
+    margin-bottom: 20px;
+}
+.result_translate {
+    display: none;
+}
+.translate {
+    text-align: right;
+}
+.btn {
+    padding: 0px 5px;
+}
+.answer, .comment .row {
+     margin-right: 0;
+     margin-left: 0;
+}
+.answer p {
+    font-weight: bold;
+}
+.comment {
+    border: 1px #e7e7e7 solid;
+    border-radius: 4px;
+    padding: 20px 0px 20px 20px;
+    margin-bottom: 60px;
+}
+.comment h5 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.comment h5 i {
+    margin-right: 5px;
+}
+.avatar_cmt {
+    padding-left: 0;
+}
+.avatar {
+    display: inline-block;
+    position: relative;
+}
+.avatar img {
+    box-shadow: 0 0 0 5px white, 0 3px 5px 4px rgba(0, 0, 0, 0.1);
+}
+.avatar_round img {
+    border-radius: 50%;
+    height:70px;
+    width: 70px;
+}
+.formCmt {
+    padding-left: 0;
+    padding-top: 15px;
+}
+.formCmt button {
+    border-radius: 2px;
+    margin-left: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+.formCmt i {
+    padding-top: 3px;
+    padding-bottom: 0px;
+}
+.comment-box img {
+    width: 50px;
+    height: 50px;
+}
+.comment-box .media-left {
+    padding-right: 10px;
+    width: 65px;
+}
+.comment-box .media-body .media-content {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.comment-box .media-heading {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    padding: 7px 10px;
+    position: relative;
+    margin-bottom: -1px;
+}
+.comment-box .media-heading:before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-width: 1px 0 0 1px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 10px;
+    left: -6px;
+}
+.comment-box .media-heading  i {
+    font-size: 14px;
+}

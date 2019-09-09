@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/var/www/cgi-bin/community_app/View/Elements/Tops'
+let g:netrw_dirhist_2='/var/www/cgi-bin/community_app/View/Elements'
+let g:netrw_dirhist_3='/var/www/html/community/tmh/js/tops'
+let g:netrw_dirhist_4='/var/www/cgi-bin/community_app/View/Mobile/Elements/Tops'
+let g:netrw_dirhist_5='/var/www/html/cmn/lib/w2ui'
+let g:netrw_dirhist_6='/var/www/cgi-bin/community_app/View/Activities'
+let g:netrw_dirhist_7='/var/www/cgi-bin/admin_app/View/Elements/Alerts'
+let g:netrw_dirhist_8='/var/www/cgi-bin'
+let g:netrw_dirhist_9='/var/www/cgi-bin/community_app/View/Themed/5'

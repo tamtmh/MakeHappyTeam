@@ -1,0 +1,358 @@
+/* register and login */
+
+.form-user,
+#forgot_pass,
+#reset_pass {
+    margin-left: 24%;
+    border: 1px #e9ecef solid;
+    border-radius: 6px;
+    text-align: center;
+    padding: 20px 20px 30px 20px;
+    background: white;
+}
+
+.form-user {
+    background: white;
+}
+
+.form-user .form-group {
+    margin-bottom: 25px;
+}
+
+.form-user .form-option {
+    margin-bottom: 20px;
+}
+
+.form-user form,
+#forgot_pass form,
+#reset_pass form {
+    padding-left: 17%;
+}
+
+.form-user .title-form,
+#reset_pass .title-form,
+#forgot_pass .title-form{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 29px;
+    color: #616161
+}
+
+.form-user .title-form {
+    margin-bottom: 20px;
+}
+
+#forgot_pass .title-form {
+    margin-bottom: 12px;
+}
+
+#reset_pass p,
+#forgot_pass p {
+    margin-bottom: 0;
+}
+
+#forgot_pass h2,
+#reset_pass h2 {
+    margin-bottom: 10px;
+    color: #616161;
+}
+
+#forgot_pass .note,
+#reset_pass .note {
+    font-size: 18px;
+    opacity: 0.5;
+    color: #007bff;
+}
+
+.iconuser {
+    border: 1px #c8c8c8 solid;
+    border-right: none;
+    padding: 5px 0;
+    border-radius: 4px 0 0 4px;
+}
+
+.info {
+    padding-left: 0;
+}
+
+.info input {
+    border-radius: 0 4px 4px 0;
+}
+
+.form-check-login {
+    float: left;
+}
+
+.savepass,
+.resetpass {
+    margin-left: -15px;
+}
+
+.avatar {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+#reset_pass .avatar {
+    margin-bottom: 10px;
+}
+
+.avatar img {
+    box-shadow: 0 0 0 5px white, 0 3px 5px 4px rgba(0, 0, 0, 0.1);
+}
+
+#reset_pass .input-reset {
+    margin-bottom: 25px;
+}
+.form-user .avatar_round {
+    margin-bottom: 5%;
+}
+
+.form-user .avatar_round img{
+    border-radius: 50%;
+    height: 90px;
+    width: 90px;
+}
+
+#forgot_pass .avatar_round img,
+#reset_pass .avatar_round img{
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+}
+
+.savepass {
+    width: 20%;
+    float: left;
+    margin-bottom: 0
+}
+
+.resetpass {
+    float: right;
+}
+
+#forgot_pass .btnforgot {
+    padding-left: 0;
+    margin-top: 30px;
+    margin-bottom: 15%;
+}
+
+#forgot_pass .btnforgot {
+    padding-left: 0;
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+.form-user .buttonSignup {
+    padding-left: 0;
+    margin-top: 20px;
+    margin-bottom: 10%;
+}
+.form-user .buttonLogin {
+    padding-left: 0;
+    margin-top: 30px;
+    margin-bottom: 10%;
+}
+
+#reset_pass .btn-reset {
+    padding-left: 0;
+    margin-top: 15px;
+    margin-bottom: 3%;
+}
+
+#reset_pass .btn-reset button:hover,
+#forgot_pass .btnforgot button:hover,
+.form-user .buttonLogin .login:hover,
+.form-user .buttonSignup .login:hover{
+    background: linear-gradient(88deg,#04befe,#318be3);
+    color: white;
+}
+
+#reset_pass .btn-reset button,
+#forgot_pass .btnforgot button,
+.login {
+    width: 84%;
+    margin-right: 16%;
+    background: linear-gradient(88deg,#318be3,#04befe);
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+}
+
+#reset_pass .btn-reset button {
+    width: 83%;
+    margin-right: 17%;
+}
+
+.signup {
+    display: block;
+    font-size: 16px;
+    text-align: center;
+    width: 80%;
+}
+
+.signup .txt1 {
+    color: #999;
+    font-size: 15px;
+}
+
+.signup .txt2 {
+    color: blue;
+}
+
+.signup .txt2:hover {
+    text-decoration: none;
+    color: #6a7dfe;
+}
+/* homepage login */
+
+.card,
+.homepage textarea {
+    height: 170px;
+}
+
+.homepage {
+    border: 1px #e7e7e7 solid;
+    padding: 20px;
+    margin-top: -15px;
+    margin-bottom: 70px;
+}
+
+#inputtoday {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+}
+
+#inputtoday[type=text]:disabled {
+    background: #fff;
+}
+
+.whatsay {
+    width: 100%;
+    border-color: #DFDFDF;
+    border-radius: 5px;
+    padding: 10px
+}
+
+.form-score {
+    margin-top: 17px;
+    font-size: 21px
+}
+
+.sendreport {
+    float: right;
+    margin-top: 10px
+}
+
+.title-history {
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 0px;
+}
+
+.history hr {
+    margin-top: 0 !important
+}
+
+.history table {
+    text-align: center
+}
+
+.date-create-report {
+    width: 30%;
+    float: left;
+    margin-right: 10px;
+    text-align: center
+}
+
+.title-date input {
+    margin-bottom: 20px
+}
+
+.title-date img {
+    margin-top: 12px
+}
+
+#emoji input {
+    width: 30%;
+}
+
+#selectemoji {
+    margin-bottom: -10px;
+}
+
+@media (min-device-width: 400px) and (max-device-width: 1000px) {
+    .homepage .col-sm-12 {
+        padding-left: 0;
+    }
+    .form-score {
+        font-size: 18px;
+        width: auto;
+        padding: 0;
+    }
+}
+
+
+/*reset-pass*/
+
+#reset_pass .title {
+    padding-top: 40px;
+    font-size: 37px;
+    color: #616161;
+    margin: auto;
+}
+
+#reset_pass .form-forgot {
+    /*border: 1px solid #616161;*/
+    background: #E0E0E0;
+    margin: auto;
+    width: 600px;
+    height: 300px;
+}
+
+#reset_pass .message-text {
+    width: 400px;
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+}
+
+#reset_pass .password-form {
+    width: 60%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+#reset_pass .submit {
+    padding-top: 30px;
+    text-align: center;
+}
+
+
+/* paginator in report index */
+
+.active {
+    color: #6c757d;
+}
+
+.page-link-disabled {
+    color: #6c757d;
+    pointer-events: none;
+    cursor: auto;
+}
+
+.btn-style {
+    width: 100%;
+}
+
+.btnRequest,
+.btnProgress,
+.btnDetail,
+.btnRequestMember {
+    width: 110px;
+}
+
+

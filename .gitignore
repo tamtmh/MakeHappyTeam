@@ -1,0 +1,42 @@
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+.idea
+
+# common ignore
+*.swp
+*.swo
+*.pyc
+*.zip
+*.lock
+*.log
+*.log.[0-9]*
+*.log.[0-9]*.gz
+*.log.gz
+
+# TMP
+app/tmp/logs/*
+app/tmp/sessions/*
+app/tmp/tests/*
+app/tmp/cache/*
+app/tmp/cache/models/*
+app/tmp/cache/persistent/*
+app/tmp/cache/views/*
+
+!app/tmp/logs/empty
+!app/tmp/sessions/empty
+!app/tmp/tests/empty
+!app/tmp/cache/models/empty
+!app/tmp/cache/persistent/empty
+!app/tmp/cache/views/empty
+
+#Img
+app/webroot/img/avatar_team/*
+app/webroot/img/avatar_user/*

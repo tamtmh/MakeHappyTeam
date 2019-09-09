@@ -1,0 +1,30 @@
+.form-question {
+    margin-right: 0;
+    margin-left: 0;
+    padding-left: 30%;
+    border: 1px #c8c8c8 solid;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 4px;
+    margin-bottom: 70px;
+}
+
+.content1,
+.content2,
+.content3,
+.content4,
+.content5 {
+    margin-bottom: 10px;
+}
+
+.content2 label {
+    margin-bottom: 0;
+}
+
+.button {
+    text-align: center;
+}
+
+.button button {
+    padding: 5px 10px;
+}
