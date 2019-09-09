@@ -1,0 +1,49 @@
+# PHP CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-php/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+    # Specify the version you desire here
+    - image: circleci/php:7.1-node-browsers
+
+    - image: circleci/mysql:5.7
+        environment:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: test
+          MYSQL_USER: tam
+          MYSQL_PASSWORD: tamtest
+    steps:
+    - checkout
+
+    - run:
+        name: Waiting for MySQL to be ready
+        command: |
+          for i in `seq 1 30`;
+          do
+            nc -z 127.0.0.1 3306 && echo Success && exit 0
+            echo -n .
+            sleep 1
+          done
+          echo Failed waiting for MySQL && exit 1
+    - run:
+        name: Install MySQL CLI
+        command: |
+          sudo apt-get install mysql-client
+          mysql -h 127.0.0.1 -u tam -ptamtest test < app/DDL/DDL_Insert_Make_Happy.sql
+    - run:
+        name: Chmod app/tmp
+        command: sudo chmod -R 0777 app/tmp
+    - run:
+        name: Install MySQL CLI
+        command: |
+          cd app
+          ./Console/cake test app AllTests
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+    - build
