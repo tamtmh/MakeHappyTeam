@@ -7,14 +7,15 @@ jobs:
   build:
     docker:
     # Specify the version you desire here
-    - image: circleci/php:7.1-node-browsers
+    - image: circleci/php:7.1-apache-node-browsers
+
 
     - image: circleci/mysql:5.7
-        environment:
-          MYSQL_ROOT_PASSWORD: root
-          MYSQL_DATABASE: test
-          MYSQL_USER: tam
-          MYSQL_PASSWORD: tamtest
+      environment:
+        MYSQL_ROOT_PASSWORD: rootpw
+        MYSQL_DATABASE: test_db
+        MYSQL_USER: user
+        MYSQL_PASSWORD: passw0rd
     steps:
     - checkout
 
