@@ -7,7 +7,7 @@ jobs:
       command: [--default-authentication-plugin=mysql_native_password]
       environment:
         MYSQL_ALLOW_EMPTY_PASSWORD: true
-        MYSQL_DATABASE: test_db
+        MYSQL_DATABASE: make_happy
         MYSQL_USER: user
         MYSQL_PASSWORD: passw0rd
 
@@ -28,8 +28,12 @@ jobs:
         name: Install MySQL CLI; Import dummy data; run an example query
         command: |
           sudo apt-get install default-mysql-client
-          mysql -h 127.0.0.1 -u user -ppassw0rd test_db < sql-data/dummy.sql
-          mysql -h 127.0.0.1 -u user -ppassw0rd --execute="SELECT * FROM test_db.Persons"
+          mysql -h 127.0.0.1 -u user -ppassw0rd make_happy < ./DDL/DDL_Insert_Make_Happy.sql
+    - run:
+        name: Testing Cakephp
+        command: |
+          cd app
+          ./Console/cake test app AllTests
 workflows:
   version: 2
   build-deploy:
