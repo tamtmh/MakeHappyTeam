@@ -41,9 +41,3 @@ jobs:
         command: |
           cd app
           ./Console/cake test app AllTests
-
-workflows:
-  version: 2
-  build-deploy:
-    jobs:
-    - build
