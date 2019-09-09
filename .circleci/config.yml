@@ -19,7 +19,10 @@ jobs:
     steps:
     # Checkout from GIT
     - checkout
-
+    - run:
+      name: Waiting for MySQL to be ready
+      command: |
+        cat /etc/*-release
     - run:
         name: Waiting for MySQL to be ready
         command: |
