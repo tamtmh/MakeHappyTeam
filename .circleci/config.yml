@@ -21,8 +21,8 @@ jobs:
     - checkout
     - run:
       name: Waiting for MySQL to be ready
-      command: |
-        cat /etc/*-release
+      command:
+        hostnamectl
     - run:
         name: Waiting for MySQL to be ready
         command: |
