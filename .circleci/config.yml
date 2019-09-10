@@ -11,6 +11,7 @@ jobs:
         MYSQL_DATABASE: make_happy
         MYSQL_USER: root
         MYSQL_ALLOW_EMPTY_PASSWORD: true
+      name: mht-db
 
     steps:
     - checkout
