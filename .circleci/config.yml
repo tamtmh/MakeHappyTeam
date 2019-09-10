@@ -45,9 +45,9 @@ jobs:
           echo 127.0.0.1 mht-db | sudo tee -a /etc/hosts
           echo 127.0.0.1 mht-web | sudo tee -a /etc/hosts
     - run:
-        name: Start Apache
+        name: Check apache
         command: |
-          sudo service apache2 restart
+          sudo service apache2 status
           php -v
     - run:
         name: Test Curl
