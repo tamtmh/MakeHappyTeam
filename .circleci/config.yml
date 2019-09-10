@@ -28,7 +28,7 @@ jobs:
         name: Install MySQL CLI; Import dummy data; run an example query
         command: |
           sudo apt-get install default-mysql-client
-          mysql -h 127.0.0.1 -u user -ppassw0rd make_happy < ./DDL/DDL_Struct_Make_Happy.sql
+          mysql -h 127.0.0.1 -u root make_happy < ./DDL/DDL_Struct_Make_Happy.sql
           mysql -h 127.0.0.1 -u root -e "create database test;"
     - run:
         name: Testing Cakephp
