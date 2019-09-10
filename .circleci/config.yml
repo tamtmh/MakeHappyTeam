@@ -18,6 +18,7 @@ jobs:
         name: Install Apache
         command: |
           sudo apt update
+          sudo apt install ufw
           sudo apt install apache2
           sudo ufw app list
           sudo ufw allow 'Apache'
