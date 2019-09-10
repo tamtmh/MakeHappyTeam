@@ -15,6 +15,15 @@ jobs:
     steps:
     - checkout
     - run:
+        name: Install Apache
+        command: |
+          sudo apt update
+          sudo apt install apache2
+          sudo ufw app list
+          sudo ufw allow 'Apache'
+          sudo ufw status
+          sudo systemctl status apache2
+    - run:
         name: Install PHP exts
         command: |
           sudo docker-php-ext-install zip
