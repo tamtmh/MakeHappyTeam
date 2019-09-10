@@ -38,6 +38,7 @@ jobs:
           sudo apt-get install default-mysql-client
           mysql -h 127.0.0.1 -u root make_happy < ./DDL/DDL_Struct_Make_Happy.sql
           mysql -h 127.0.0.1 -u root -e "create database test;"
+          mysql -h 127.0.0.1 -u root -e "show databases;"
     - run:
         name: Docker Host
         command: echo 127.0.0.1 mht-db | sudo tee -a /etc/hosts
