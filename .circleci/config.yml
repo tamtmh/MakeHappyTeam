@@ -45,6 +45,10 @@ jobs:
           echo 127.0.0.1 mht-db | sudo tee -a /etc/hosts
           echo 127.0.0.1 mht-web | sudo tee -a /etc/hosts
     - run:
+        name: Test Curl
+        command: |
+          curl http://127.0.0.1
+    - run:
         name: Testing Cakephp
         command: |
           cd app
