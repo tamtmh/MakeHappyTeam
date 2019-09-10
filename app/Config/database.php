@@ -69,7 +69,7 @@ class DATABASE_CONFIG {
 	public $default = array(
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
-		'host' => 'mht-db',
+		'host' => '127.0.0.1',
 		'login' => 'root',
 		'password' => '',
 		'database' => 'make_happy',
@@ -80,7 +80,7 @@ class DATABASE_CONFIG {
 	public $test = array(
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
-		'host' => 'mht-db',
+		'host' => '127.0.0.1',
 		'login' => 'root',
 		'password' => '',
 		'database' => 'test',
