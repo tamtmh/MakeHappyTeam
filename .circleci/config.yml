@@ -2,10 +2,10 @@ version: 2
 jobs:
   build:
     docker:
-    - name: mht-db
     - image: circleci/php:7.1-apache-node-browsers # The primary container where steps are run
 
     - image: circleci/mysql:8.0.4
+    - name: mht-db
       command: [--default-authentication-plugin=mysql_native_password]
       environment:
         MYSQL_HOST: 127.0.0.1
