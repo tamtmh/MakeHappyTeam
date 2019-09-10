@@ -41,7 +41,9 @@ jobs:
           mysql -h 127.0.0.1 -u root -e "show databases;"
     - run:
         name: Docker Host
-        command: echo 127.0.0.1 mht-db | sudo tee -a /etc/hosts
+        command: |
+          echo 127.0.0.1 mht-db | sudo tee -a /etc/hosts
+          echo 127.0.0.1 mht-web | sudo tee -a /etc/hosts
     - run:
         name: Testing Cakephp
         command: |
@@ -51,8 +53,7 @@ workflows:
   version: 2
   build-deploy:
     jobs:
-    - build
-#    :
-#      filters:
-#        branches:
-#          only: develop
+      - build:
+          filters:
+            branches:
+              only: develop
