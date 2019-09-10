@@ -6,6 +6,7 @@ jobs:
     - image: circleci/mysql:8.0.4
       command: [--default-authentication-plugin=mysql_native_password]
       environment:
+        MYSQL_HOST: 127.0.0.1
         MYSQL_ALLOW_EMPTY_PASSWORD: true
         MYSQL_DATABASE: make_happy
         MYSQL_USER: user
@@ -13,6 +14,13 @@ jobs:
 
     steps:
     - checkout
+    - run:
+        name: Install PHP exts
+        command: |
+          sudo docker-php-ext-install zip
+          sudo docker-php-ext-configure intl
+          sudo docker-php-ext-install intl
+          sudo docker-php-ext-install pdo_mysql
     - run:
         # Our primary container isn't MYSQL so run a sleep command until it's ready.
         name: Waiting for MySQL to be ready
