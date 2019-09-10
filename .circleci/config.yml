@@ -16,7 +16,7 @@ jobs:
     - checkout
     - run:
         name: Check Apache
-        command: sudo service httpd status
+        command: sudo systemctl status apache2
     - run:
         name: Install PHP exts
         command: |
