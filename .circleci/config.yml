@@ -15,15 +15,8 @@ jobs:
     steps:
     - checkout
     - run:
-        name: Install Apache
-        command: |
-          sudo apt update
-          sudo apt install ufw
-          sudo apt install apache2
-          sudo ufw app list
-          sudo ufw allow 'Apache'
-          sudo ufw status
-          sudo systemctl status apache2
+        name: Check Apache
+        command: sudo systemctl status apache2
     - run:
         name: Install PHP exts
         command: |
