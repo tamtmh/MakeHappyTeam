@@ -57,7 +57,7 @@ jobs:
         name: Testing Cakephp
         command: |
           cd app
-          ./Console/cake test app Model/TUserTeam
+          ./Console/cake test app Controller/Component/NotificationComponent
 workflows:
   version: 2
   build-deploy:
