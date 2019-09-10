@@ -2,7 +2,7 @@
 App::uses('ClassRegistry', 'Utility');
 
 class LoginsControllerTest extends ControllerTestCase {
-    public $fixtures = array('app.user','app.team');
+    public $fixtures = array('app.user','app.team','app.roleteam');
 
     public function setUp() {
         parent::setUp();
