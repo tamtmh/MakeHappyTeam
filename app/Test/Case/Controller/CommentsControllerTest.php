@@ -2,7 +2,7 @@
 App::uses('ClassRegistry', 'Utility');
 
 class CommentsControllerTest extends ControllerTestCase {
-    public $fixtures = array('app.userteam', 'app.team', 'app.user', 'app.comment', 'app.notification','app.roleteam');
+    public $fixtures = array('app.team', 'app.user', 'app.comment', 'app.notification','app.roleteam');
 
     public function setUp() {
         parent::setUp();
