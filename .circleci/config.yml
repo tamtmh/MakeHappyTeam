@@ -8,7 +8,8 @@ jobs:
       command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --default-authentication-plugin=mysql_native_password
       environment:
         MYSQL_HOST: 127.0.0.1
-        MYSQL_DB: make_happy
+        MYSQL_ROOT_HOST: %
+        MYSQL_DATABASE: make_happy
         MYSQL_USER: root
         MYSQL_ALLOW_EMPTY_PASSWORD: true
 
