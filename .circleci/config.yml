@@ -3,16 +3,13 @@ jobs:
   build:
     docker:
     - image: circleci/php:7.1-apache-node-browsers # The primary container where steps are run
-      environment:
-        MYSQL_HOST: 127.0.0.1
-        MYSQL_DB: make_happy
-        MYSQL_USER: root
-        MYSQL_ALLOW_EMPTY_PASSWORD: true
-        MYSQL_PASSWORD:
+
     - image: circleci/mysql:8.0.4
+      name: mht-db
       command: [--default-authentication-plugin=mysql_native_password]
       environment:
         MYSQL_HOST: 127.0.0.1
+        MYSQL_DB: make_happy
         MYSQL_USER: root
         MYSQL_ALLOW_EMPTY_PASSWORD: true
 
