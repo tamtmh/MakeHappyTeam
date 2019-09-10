@@ -5,10 +5,7 @@ jobs:
     - image: circleci/php:7.1-apache-node-browsers # The primary container where steps are run
       name: mht-web
       environment:
-        MYSQL_HOST: 127.0.0.1
-        MYSQL_DATABASE: make_happy
-        MYSQL_USER: user
-        MYSQL_PASSWORD: passw0rd
+        MYSQL_HOST: mht-db
     - image: circleci/mysql:8.0.4
       name: mht-db
       command: [--default-authentication-plugin=mysql_native_password]
